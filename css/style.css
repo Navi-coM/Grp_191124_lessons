@@ -1,0 +1,127 @@
+/* 
+1.  Базова картинка - 1 кол 1 ряд       gr-item 
+2.  Подвійна горизонталь - 1 ряд 2 кол  gr-item_col-dbl
+3.  Подвійна вертикаль - 2 ряд 1 кол    gr-item_row-dbl
+4.  Full картинка - 2 ряд 2 кол         gr-item_full
+*/     
+
+@import url('./vars.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    font-size: var(--main-font-size);
+    font-family: var(--main-font-family);
+    color: #fff;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(140px, 220px)  1fr ;
+
+    grid-template-areas: 
+                            "header"
+                            "main" ;
+}
+
+.header,
+.main {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+.title {
+    font-family: "Delius Unicase", serif;
+    font-weight: 400;
+    color: #000;
+}
+.title_1 {
+    text-align: center;
+    font-size: 2.1rem;
+}
+.title_2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.header {
+    grid-area: header;
+    padding: 20px;
+    background-color: #a9caef;
+    margin-bottom: 80px;
+}
+.main {
+    grid-area: main;
+}
+.section {
+    margin-bottom: 120px;
+}
+
+/* ----------Start Gallery block style ------------ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 30px;
+}
+.gr-item__img {
+    object-fit: contain;
+    height: 100%;
+    border-radius: 20px;
+}
+.gr-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gr-item_col-dbl {
+    /* grid-column-start: 2; */
+    /* grid-column-end: 4; */
+
+    grid-column: span 2;
+}
+.gr-item_row-dbl {
+    grid-row: span 2;
+}
+
+.gr-item_full {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gr-item__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.gr-item__date {
+    color: #E0E0E0;
+    font-weight: 200;
+}
+.gr-item__icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    
+}
+
+.gr-item:hover > .gr-item__icons {
+    opacity: 1;
+}
