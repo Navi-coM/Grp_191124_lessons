@@ -1,0 +1,184 @@
+/* 
+1.  Базова картинка - 1 кол 1 ряд       gr-item 
+2.  Подвійна горизонталь - 1 ряд 2 кол  gr-item_col-dbl
+3.  Подвійна вертикаль - 2 ряд 1 кол    gr-item_row-dbl
+4.  Full картинка - 2 ряд 2 кол         gr-item_full
+*/     
+
+
+/* position Value
+
+1. position: absolute - абсолютне позиціювання, вибиває з потоку;
+2. position: relative - відносне позиціювання, не вибиває з потоку;
+3. position: fixed - фіксується відносно вікна залізобетоноб вибивається з потоку;
+4. position: sticky - поєднання relative і fixed, не вибиває з потоку;
+5. position: static (по замовчуванню);
+
+top, right, bottom, left - координати
+
+z-index
+*/
+
+
+
+@import url('./vars.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    font-size: var(--main-font-size);
+    font-family: var(--main-font-family);
+    color: #fff;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(140px, 220px)  1fr ;
+
+    grid-template-areas: 
+                            "header"
+                            "main" ;
+}
+
+.header,
+.main {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+.title {
+    font-family: "Delius Unicase", serif;
+    font-weight: 400;
+    color: #000;
+}
+.title_1 {
+    text-align: center;
+    font-size: 2.1rem;
+}
+.title_2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.header {
+    grid-area: header;
+    padding: 20px;
+    background-color: #a9caef;
+    margin-bottom: 80px;
+}
+.main {
+    grid-area: main;
+}
+.section {
+    position: relative;
+    margin-bottom: 120px;
+    padding-top: 120px;
+}
+
+/* ----------Start Gallery block style ------------ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 30px;
+}
+.gr-item__img {
+    object-fit: contain;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.gr-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gr-item__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.gr-item__content::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(34,34,34,0.3) 100%, rgba(247,247,247,0) 100%);
+}
+
+
+.gr-item:hover .gr-item__content::after {
+    opacity: 0;
+}
+
+.gr-item_col-dbl {
+    /* grid-column-start: 2; */
+    /* grid-column-end: 4; */
+
+    grid-column: span 2;
+}
+.gr-item_row-dbl {
+    grid-row: span 2;
+}
+
+.gr-item_full {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gr-item__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.gr-item__date {
+    color: #E0E0E0;
+    font-weight: 200;
+}
+.gr-item__icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    
+}
+
+.gr-item:hover > .gr-item__icons {
+    opacity: 1;
+}
+
+
+.pos_fixed {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* z-index: 1; */
+}
+
+.pos_sticky {
+    position: sticky;
+    top: 10px;
+    left: 0;
+    z-index: 2;
+}
