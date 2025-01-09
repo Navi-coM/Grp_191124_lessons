@@ -1,0 +1,130 @@
+@import url('./fonts.css');
+@import url('./vars.css');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-size: var(--main-font-size);
+    font-family: 'Lato', sans-serif;
+    background: var(--backgr-main);
+    color: var(--text-font-color);
+    margin: 0;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_2 {
+    font-size: 21px;
+    color: #3b6669;
+}
+
+.form {
+    border: 1px solid #41a59d;
+
+    min-width: 380px;
+    padding: 24px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 8px;
+    background: linear-gradient(205deg, #0e272e, #9be2ed);
+    box-shadow: 3px 4px 9px 4px #346064;
+}
+
+.form__label {
+    margin-bottom: 8px;
+}
+
+.form__input,
+.form__select {
+    margin-bottom: 20px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #879594;
+}
+
+.gender__item {
+    display: flex;
+    gap: 5vw;
+    justify-content: space-around;
+}
+.gender__item label {
+    display: flex;
+    align-items: center;
+}
+
+.gender__check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #ffffffe0;
+    border: 1px solid #d0c2c2;
+    border-radius: 50%; 
+}
+.gender__check::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    box-shadow: 0 0 0px 5px  #404346 inset;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.skills__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 180px;
+    margin: 0 auto;
+}
+.skills__item label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__check {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #4a555a;
+    background: #f5f0f0f5;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked ~ span::after,
+input[type="radio"]:checked ~ span::after {
+    opacity: 1;
+}
+
+.skills__check::after {
+    content: "\2713";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    color: #183f4b;
+    font-size: 21px;
+    font-weight: 700;
+    opacity: 0;
+}

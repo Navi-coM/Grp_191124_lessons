@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson_15 Form Style</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <main class="main">
+            <section class="section">
+                <form class="form" autocomplete="off">
+                    <label for="name" class="form__label">User name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="form__input"
+                        placeholder="Your name..."
+                    >
+                    <label for="mail" class="form__label">User mail</label>
+                    <input
+                        type="email"
+                        id="mail"
+                        class="form__input"
+                        placeholder="Your mail..."
+                        required
+                    >
+                    <select name="country" class="form__select">
+                        <option value="" selected disabled>Your country...</option>
+                        <option value="ukr">Ukraine</option>
+                        <option value="swe">Sweden</option>
+                        <option value="pol">Poland</option>
+                        <option value="frn">France</option>
+                    </select>
+                    <div class="form__gender gender">
+                        <h2 class="title_2">Your Gender</h2>
+                        <div class="gender__item">
+                            <label>
+                                Women
+                                <input type="radio" name="gender">
+                                <span class="gender__check"></span>
+                            </label>
+                            <label>
+                                Men
+                                <input type="radio" name="gender">
+                                <span class="gender__check"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__skills skills">
+                        <h2 class="title_2">Skills</h2>
+                        <div class="skills__item">
+                            <label>
+                                HTML 5
+                                <input type="checkbox">
+                                <span class="skills__check"></span>
+                            </label>
+                            <label>
+                                CSS 3
+                                <input type="checkbox">
+                                <span class="skills__check"></span>
+                            </label>
+                            <label>
+                                JavaScript
+                                <input type="checkbox">
+                                <span class="skills__check"></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <!-- <a href="https://google.com" class="link">Google</a> -->
+    </body>
+</html>

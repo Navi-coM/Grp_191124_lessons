@@ -1,0 +1,7 @@
+:root {
+    --main-font-size: 16px;
+    --backgr-main: linear-gradient(#c9d6da, #6091a8);
+    --title-font-color: #adc3c8;
+    --text-font-color: #deebee;
+    --width-container: 1170px;
+}
