@@ -1,0 +1,65 @@
+@import "vars";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: $font-family-main;
+    font-size: $font-size-main;
+    background: linear-gradient(#ffddff, #434c43);
+    color: #39403f;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    padding: 28px 0;
+    background: #7e667e;
+    color: #fff;
+
+    &__title {
+        position: relative;
+        font-size: 2.2em;
+        color: #e9e0e9;
+        font-weight: 600;
+
+        &::after {
+            content: "$";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            width: 20px;
+        }
+    }
+
+    &__logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.section {
+    @include flex(space-between);
+}
+
+.section_2 {
+    @include flex(center);
+    gap: 20px;
+}
+
+.section_3 {
+    @include flex(space-evenly, flex-start);
+}
+
+.section p,
+.section_2 p,
+.section_3 p {border: 1px solid #000;}
