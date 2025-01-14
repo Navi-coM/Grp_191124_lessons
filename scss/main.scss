@@ -1,5 +1,6 @@
 @import "vars";
 @import "mixins";
+@import "extends";
 
 * {
     box-sizing: border-box;
@@ -19,6 +20,11 @@ body {
     max-width: $container-width;
     margin: 0 auto;
     padding: 0 15px;
+
+    &_half {
+        max-width: $container-width / 2;
+        margin: 0 0;
+    }
 }
 
 .header {
@@ -49,6 +55,11 @@ body {
 
 .section {
     @include flex(space-between);
+    margin-bottom: 100px;
+
+    &_col {
+        flex-direction: column;
+    }
 }
 
 .section_2 {
@@ -62,4 +73,39 @@ body {
 
 .section p,
 .section_2 p,
-.section_3 p {border: 1px solid #000;}
+.section_3 p {
+    border: 1px solid #000;
+}
+
+.btns {
+    @include flex(center, center);
+    gap: 4vw;
+}
+
+.btn {
+    @extend %btn-shared;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &_red {
+        background: #84381c;
+
+        &-darker {
+            transition: all 0.3s;
+
+            &:hover {
+                background: darken(#84381c, 8%);
+                transform: translate(10px, 5px) rotate(45deg) scale(1.12);
+            }
+        }
+    }
+
+    &_blue {
+        background: #4474ab;
+    }
+}
+
+.btn-submit {
+    @extend .btn;
+    transform: scale(1.2);
+}
