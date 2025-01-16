@@ -1,0 +1,108 @@
+@import "vars";
+@import "mixins";
+@import "extends";
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    background: linear-gradient(#dcd4dc, #173f58);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    &-flex {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+}
+.section {
+    flex-grow: 1;
+    &__double {
+        flex-grow: 2;
+
+        @media screen and (max-width: 1240px) {
+            background: #3b5777;
+        }
+    }
+}
+.btns {
+    @include flex(center, center);
+    gap: 1.5vw;
+}
+
+.btn {
+    @extend %btn-shared;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &_red {
+        background: #84381c;
+
+        &-darker {
+            transition: all 0.3s;
+
+            &:hover {
+                background: darken(#84381c, 8%);
+                transform: translate(10px, 5px) rotate(45deg) scale(1.12);
+            }
+        }
+    }
+
+    &_blue {
+        background: #4474ab;
+    }
+}
+
+// ------------------------- Media Queries ------------------------------
+
+// @media screen and (max-width: 1240px) {
+//     .container {
+//         &-flex {
+//             flex-wrap: wrap;
+//             max-width: 780px;
+//         }
+//     }
+//     // .section {
+//     //     &__double {
+//     //         background: #3b5777;
+//     //     }
+//     // }
+// }
+
+// @media screen and (max-width: 768px) {
+//     body {
+//         min-height: auto;
+//     }
+//     .container {
+//         padding: 0 20px;
+//     }
+//     .btns {
+//         @include flex(space-evenly, center);
+//     }
+//     .text {
+//         font-size: 14px;
+//     }
+// }
+// @media screen and (max-width: 768px) and (min-width: 678px) {
+//     .section {
+//         &__double {
+//             background: #e1400f;
+//         }
+//     }
+// }
+// @media screen and (max-width: 440px) {
+//     .btns {
+//         flex-direction: column;
+//     }
+// }
+
+@import "media";

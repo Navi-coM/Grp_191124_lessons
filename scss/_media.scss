@@ -1,0 +1,40 @@
+@media screen and (max-width: 1240px) {
+    .container {
+        &-flex {
+            flex-wrap: wrap;
+            max-width: 780px;
+        }
+    }
+    // .section {
+    //     &__double {
+    //         background: #3b5777;
+    //     }
+    // }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        min-height: auto;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .btns {
+        @include flex(space-evenly, center);
+    }
+    .text {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 678px) {
+    .section {
+        &__double {
+            background: #e1400f;
+        }
+    }
+}
+@media screen and (max-width: 440px) {
+    .btns {
+        flex-direction: column;
+    }
+}
