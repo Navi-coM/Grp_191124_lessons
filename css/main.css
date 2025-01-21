@@ -1,0 +1,92 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+ul,
+ol,
+dl {
+  margin: 0 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  color: #565656;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffddff), to(#1b9aa0));
+  background: linear-gradient(#ffddff, #1b9aa0);
+}
+
+.header,
+.section,
+.footer {
+  padding: 0 calc(50vw - 585px);
+}
+@media screen and (max-width: 1200px) {
+  .header,
+  .section,
+  .footer {
+    padding: 0 calc(50vw - (585px - 12%));
+  }
+}
+@media screen and (max-width: 992px) {
+  .header,
+  .section,
+  .footer {
+    padding: 0 calc(50vw - (585px - 26.5%));
+  }
+}
+@media screen and (max-width: 768px) {
+  .header,
+  .section,
+  .footer {
+    padding: 0 15px;
+  }
+}
+
+.gallery {
+  width: 800px;
+  height: 500px;
+  background: url("../assets/img/HeaderBackground.png") no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@media screen and (max-width: 992px) {
+  .gallery {
+    background: url("../assets/img/HeaderBackgroundtablet.png") no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallery {
+    background: url("../assets/img/HeaderBackgroundmobile.png") no-repeat;
+  }
+}
+
+.block-img {
+  border: 1px solid #000;
+  width: fit-content(350px);
+  height: fit-content(220px);
+}
+.block-img__picture {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
