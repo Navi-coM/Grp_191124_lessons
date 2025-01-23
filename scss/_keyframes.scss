@@ -1,0 +1,90 @@
+@keyframes moveCircle {
+    // to {}
+    // from {}
+    0% {
+        top: 10;
+        left: 0;
+        transform: scale(1) rotate(0);
+    }
+
+    25% {
+        top: 30px;
+        left: 90px;
+        transform: scale(1.25) rotate(90deg);
+    }
+
+    50% {
+        top: 60px;
+        left: 200px;
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    75% {
+        top: 15px;
+        left: 80px;
+        transform: scale(1.25) rotate(270deg);
+    }
+
+    100% {
+        top: -10px;
+        left: 0;
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@keyframes rotateSquare {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scaleText {
+    100% {
+        transform: scale(1.095);
+    }
+}
+
+
+@keyframes moveBallLeft {
+    0%,
+    50% {
+        transform: rotate(0) translateX(0);
+    }
+    100% {
+        transform: rotate(30deg) translateX(-35px);
+    }
+}
+
+@keyframes moveBallRight {
+    0%{
+        transform: rotate(-30deg) translateX(35px);
+    }
+    50%,
+    100% {
+        transform: rotate(0) translateX(0);
+    }
+}
+
+@keyframes moveShadowLeft {
+    0%,
+    50% {
+        opacity: 0.7;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateX(-25px) scale(0.9);
+    }
+}
+
+@keyframes moveShadowRight {
+    0% {
+        opacity: 0.3;
+        transform: translateX(25px) scale(0.9);
+    }
+    50%,
+    100% {
+        opacity: 0.7;
+        transform: translateX(0);
+    }
+}
