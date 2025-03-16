@@ -10,7 +10,7 @@ html, body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #eedfee;
-  background: linear-gradient(45deg, #7d8e93, #0c3447);
+  background: linear-gradient(45deg, #a7bbc1, #0c3447);
 }
 
 .container {
@@ -42,4 +42,26 @@ html, body {
   background: #5f5e59;
   cursor: pointer;
   margin: 0 20px;
+}
+
+.background-blue {
+  background: #2366ca;
+}
+
+.currency {
+  padding: 40px;
+  border: 1px solid #dee7e6;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+.currency__inpt {
+  padding: 4px;
+  margin-bottom: 18px;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
