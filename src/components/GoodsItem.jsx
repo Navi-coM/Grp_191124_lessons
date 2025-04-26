@@ -1,5 +1,5 @@
 const GoodsItem = (props) => {
-  const { id, name, description, price, images } = props;
+  const { id, name, description, price, images, addToCart=Function.prototype } = props;
   const full_background = images?.full_background;
 
   return (
@@ -15,7 +15,11 @@ const GoodsItem = (props) => {
             {description}
       </div>
       <div className="card-action">
-        <button className="btn">Buy</button>
+        <button className="btn" onClick={() => addToCart({
+          id,
+          name,
+          price
+        })}>Buy</button>
         <span className="right">{price} $</span>
       </div>
     </div>
@@ -24,3 +28,4 @@ const GoodsItem = (props) => {
 
 
 export { GoodsItem };
+
