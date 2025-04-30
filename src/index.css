@@ -35,13 +35,16 @@ code {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .card .card-content {
   padding-top: 5px;
 }
+
 .card-title {
   font-size: 23px;
   font-weight: 600;
 }
+
 .card .card-image {
   max-height: 310px !important;
   overflow: hidden !important;
@@ -118,6 +121,7 @@ nav ul a {
 .card-title {
   text-align: center;
 }
+
 /* .cart-quantity {
 
 } */
@@ -125,10 +129,13 @@ nav ul a {
   position: fixed;
   right: 80px;
   top: 90px;
+  cursor: pointer;
 }
+
 .material-icons {
   font-size: 2.5rem;
 }
+
 .cart-quantity {
   background: #449baa;
   color: #fff;
@@ -142,4 +149,40 @@ nav ul a {
   width: 24px;
   height: 24px;
   font-size: 14px;
+}
+
+.cart-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(#ebe4eb, #c8d9db);
+  width: 60rem;
+  max-width: 44%;
+  box-shadow: 2px 3px 12px 6px #2b549b;
+  border-radius: 12px;
+}
+.cart-delete {
+  font-size: 1.6em;
+  cursor: pointer;
+
+} 
+.cart-close {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 11px;
+  font-size: 28px;
+  background: #ffccdd;
+  border-radius: 50%;
+  box-shadow: 0px 1px 6px 4px #3d66ad;
+}
+
+.cart-quantity_icon {
+  cursor: pointer;
+  background: #a5c7d3;
+  vertical-align: middle;
+  font-size: 1.4em;
+  border-radius: 50%;
+  margin: 0 10px;
 }

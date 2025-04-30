@@ -37,8 +37,42 @@ const Shop = () => {
     }
   }
 
+  const removeFromCart = (itemId) => {
+    const newOrder = order.filter((orderItem) => orderItem.id !== itemId);
+    setOrder(newOrder);
+  }
+
   const handleCartShow = () => {
     setCartShow(!isCartShow);
+  }
+
+  const incQuantity = (itemId) => {
+    const newOrder = order.map((orderItem) => {
+      if(orderItem.id === itemId) {
+        return {
+          ...orderItem,
+          quantity: orderItem.quantity + 1,
+        }
+      } else {
+        return orderItem;
+      }
+    })
+    setOrder(newOrder);
+  }
+
+  const decQuantity = (itemId) => {
+    const newOrder = order.map((orderItem) => {
+      if(orderItem.id === itemId) {
+        const newQuantity = orderItem.quantity - 1;
+        return {
+          ...orderItem,
+          quantity: newQuantity >= 0 ? newQuantity : 0,
+        }
+      } else {
+        return orderItem;
+      }
+    })
+    setOrder(newOrder);
   }
 
   useEffect(function getGoods() {
@@ -62,7 +96,7 @@ const Shop = () => {
       <Cart quantity={order.length} handleCartShow={handleCartShow}/>
       {loading ? <Preloader /> : <GoodsList goods={goods} addToCart={addToCart}/>}
       {
-        handleCartShow && <CartList order={order}/>
+        isCartShow && <CartList order={order} handleCartShow={handleCartShow} removeFromCart={removeFromCart} incQuantity={incQuantity} decQuantity={decQuantity}/>
       }
     </main>
   );
